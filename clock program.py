@@ -15,6 +15,7 @@ def update():
     window.after(1000, update)
 
 window = Tk()
+window.title("Clock")
 window.configure(bg="gray")  # Set the background color to gray
 
 time_label = Label(window, font=("Arial", 50), fg="#00FF00", bg="black")
