@@ -1,5 +1,6 @@
 from tkinter import *
-from time import *
+from time import strftime
+import tkinter as tk
 
 def update():
     time_string = strftime("%I:%M:%S %p")
@@ -11,19 +12,19 @@ def update():
     date_string = strftime("%B %d, %Y")
     date_label.config(text=date_string)
 
-    window.after(1000,update)
-
+    window.after(1000, update)
 
 window = Tk()
+window.configure(bg="gray")  # Set the background color to gray
 
-time_label = Label(window,font=("Arial",50),fg="#00FF00",bg="black")
-time_label.pack()
+time_label = Label(window, font=("Arial", 50), fg="#00FF00", bg="black")
+time_label.pack(pady=20, fill=tk.BOTH, expand=True)
 
-day_label = Label(window,font=("Ink Free",25,"bold"))
-day_label.pack()
+day_label = Label(window, font=("Ink Free", 40, "bold",), bg="grey")
+day_label.pack(pady=20, fill=tk.BOTH, expand=True)
 
-date_label = Label(window,font=("Ink Free",30))
-date_label.pack()
+date_label = Label(window, font=("Ink Free", 30,), bg="grey")
+date_label.pack(pady=20, fill=tk.BOTH, expand=True)
 
 update()
 
